@@ -1,0 +1,8 @@
+# Private working files: prototypes, original photo crops, raw reaction data
+_drafts/
+
+# OS / editor clutter
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
