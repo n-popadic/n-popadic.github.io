@@ -56,21 +56,10 @@
           <img src="img/hero.jpg" width="1000" height="1250" alt="Nikola with arms crossed on the Brooklyn Bridge, Manhattan skyline behind him">
         </figure>
 
-        <div class="race" id="race" aria-labelledby="raceTitle">
-          <div class="race-head">
-            <h2 id="raceTitle">Can you beat my <b>24.59</b>?</h2>
-            <span class="tag">50 m freestyle</span>
-          </div>
-          <canvas id="pool" height="112" aria-label="Two-lane pool: Nikola in lane 1, you in lane 2"></canvas>
-          <div class="race-row">
-            <button class="btn red" id="mainBtn" type="button">Race me</button>
-            <div class="result" id="result" aria-live="polite">My ghost dives with one of my 86 recorded reaction times. Can you beat them?</div>
-          </div>
-          <span class="keys" id="keys">Wait for the beep, then dive with <kbd>Space</kbd>.</span>
-          <div class="foot">
-            <span class="counter" id="counter">Your races <b>0</b> · wins <b>0</b></span>
-            <a class="board-link" href="race.html">Put your name on the board</a>
-          </div>
+        <div class="cards" aria-label="Sections">
+          <a class="teaser" href="projects.html"><div class="t-head"><span class="k">Projects</span><h3>Research &amp; statistics</h3></div><p>Agentic RAG, cross-lingual text alignment, and the swimming thesis.</p><span class="go">See projects</span></a>
+          <a class="teaser" href="experience.html"><div class="t-head"><span class="k">Experience</span><h3>Computer vision &amp; NLP</h3></div><p>DunavNET ML internships and research with the Bavarian Academy of Sciences.</p><span class="go">See experience</span></a>
+          <a class="teaser" href="about.html"><div class="t-head"><span class="k">About</span><h3>Novi Sad → Maryland → Munich</h3></div><p>Pool, coaching, a summer in the US and a master's at LMU.</p><span class="go">Read the story</span></a>
         </div>
       </div>
     </section>
@@ -87,28 +76,34 @@
       </div>
     </section>
 
-    <section class="teasers" aria-label="Sections">
+    <section class="duo" aria-label="Latest news and a quick race">
       <div class="container">
-        <a class="teaser" href="projects.html"><span class="k">Projects</span><h3>Research &amp; statistics</h3><p>Agentic RAG, cross-lingual text alignment, and the swimming thesis.</p><span class="go">See projects</span></a>
-        <a class="teaser" href="experience.html"><span class="k">Experience</span><h3>Computer vision &amp; NLP</h3><p>DunavNET ML internships and research with the Bavarian Academy of Sciences.</p><span class="go">See experience</span></a>
-        <a class="teaser" href="about.html"><span class="k">About</span><h3>Novi Sad → Maryland → Munich</h3><p>Pool, coaching, a summer in the US and a master's at LMU.</p><span class="go">Read the story</span></a>
-      </div>
-    </section>
+        <div class="race" id="race" aria-labelledby="raceTitle">
+          <div class="race-head">
+            <h2 id="raceTitle">Can you beat my <b>24.59</b>?</h2>
+            <span class="tag">50 m freestyle</span>
+          </div>
+          <canvas id="pool" height="112" aria-label="Two-lane pool: Nikola in lane 1, you in lane 2"></canvas>
+          <div class="race-row">
+            <button class="btn red" id="mainBtn" type="button">Race me</button>
+            <div class="result" id="result" aria-live="polite">My ghost dives with one of my 86 recorded reaction times. Can you beat them?</div>
+          </div>
+          <span class="keys" id="keys">Wait for the beep, then dive with <kbd>Space</kbd>.</span>
+          <div class="foot">
+            <span class="counter" id="counter">Your races <b>0</b> · wins <b>0</b></span>
+            <a class="board-link" href="race.html">Put your name on the board</a>
+          </div>
+        </div>
 
-    <!-- on phones the quick race card is moved here by race-quick.js -->
-    <section class="race-late" aria-label="Quick race" hidden>
-      <div class="container" id="raceLate"><div class="rope" aria-hidden="true"></div></div>
-    </section>
-
-    <section class="news" aria-labelledby="newsTitle">
-      <div class="container">
-        <h2 class="sec-title" id="newsTitle">Latest</h2>
-        <!-- newest first; keep the latest 4–5 and drop older ones -->
-        <ul class="news-list">
-          <li><time datetime="2026-11">Nov 2026</time><span>Accepted to hackaTUM, Munich.</span></li>
-          <li><time datetime="2026-11">Nov 2026</time><span>Started an LMU consulting project on <a class="board-link" href="projects.html#rag">agentic RAG</a> with the Center for Crisis Early Warning.</span></li>
-          <li><time datetime="2026-08">Aug 2026</time><span>Joined <a class="board-link" href="projects.html#alma">ALMA</a>, cross-lingual alignment of medieval texts for the Bavarian Academy of Sciences and Humanities.</span></li>
-        </ul>
+        <div class="news">
+          <h2 class="sec-title" id="newsTitle">Latest</h2>
+          <!-- newest first; keep the latest 4–5 and drop older ones -->
+          <ul class="news-list">
+            <li><time datetime="2026-11">Nov 2026</time><span>Accepted to hackaTUM, Munich.</span></li>
+            <li><time datetime="2026-11">Nov 2026</time><span>Started an LMU consulting project on <a class="board-link" href="projects.html#rag">agentic RAG</a> with the Center for Crisis Early Warning.</span></li>
+            <li><time datetime="2026-08">Aug 2026</time><span>Joined <a class="board-link" href="projects.html#alma">ALMA</a>, cross-lingual alignment of medieval texts for the Bavarian Academy of Sciences and Humanities.</span></li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>

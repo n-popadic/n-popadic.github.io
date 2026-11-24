@@ -234,21 +234,23 @@
     document.getElementById("sReact").textContent = bestR == null ? "–" : bestR.toFixed(2);
   }
 
+  // the board: this visitor's five best races (kept in their browser) plus Nikola's 24.59, ranked together
   function renderBoard(latest) {
     var body = document.getElementById("board");
-    var top = results.slice().sort(function (a, b) { return a.t - b.t; }).slice(0, 5);
-    var rows = top.map(function (r, i) {
-      return '<tr class="' + (latest && r.at === latest.at ? "latest" : "") + '">' +
+    var rows = results.slice().sort(function (a, b) { return a.t - b.t; }).slice(0, 5);
+    rows.push({ nikola: true, name: "Nikola", t: M.NIKOLA_PB });
+    rows.sort(function (a, b) { return a.t - b.t || (a.nikola ? -1 : 1); }); // a tie goes to me
+    var html = rows.map(function (r, i) {
+      var cls = r.nikola ? "nikola" : (latest && r.at === latest.at ? "latest" : "");
+      var cap = r.nikola ? tok("--blue-soft") : r.cap;
+      return '<tr class="' + cls + '">' +
         '<td class="rank">' + (i + 1) + "</td>" +
-        '<td class="who"><span class="capdot" style="background:' + esc(r.cap) + '"></span><span class="nm">' + esc(cleanName(r.name)) + "</span>" +
-        (r.won ? '<span class="vs won">won</span>' : "") + "</td>" +
+        '<td class="who"><span class="capdot" style="background:' + esc(cap) + '"></span><span class="nm">' + esc(r.nikola ? r.name : cleanName(r.name)) + "</span>" +
+        (r.nikola ? '<span class="vs">PB</span>' : r.won ? '<span class="vs won">won</span>' : "") + "</td>" +
         '<td class="t">' + r.t.toFixed(2) + "</td></tr>";
     });
-    // keep five places visible so the board always looks complete
-    for (var i = top.length; i < 5; i++) {
-      rows.push('<tr class="open"><td class="rank">' + (i + 1) + '</td><td>' + (i === 0 ? "Be the first on the board" : "—") + '</td><td class="t">—</td></tr>');
-    }
-    body.innerHTML = rows.join("");
+    if (!results.length) html.push('<tr class="open"><td></td><td colspan="2">Race me to get on the board.</td></tr>');
+    body.innerHTML = html.join("");
   }
 
   var hist = document.getElementById("hist");

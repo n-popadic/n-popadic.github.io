@@ -198,18 +198,6 @@
   } else {
     window.addEventListener("resize", function () { draw(); });
   }
-  /* on phones the card moves below the section cards, on wider screens it stays in the hero */
-  var late = document.getElementById("raceLate");
-  if (late && window.matchMedia) {
-    var heroSlot = card.parentElement, narrow = window.matchMedia("(max-width: 900px)");
-    var place = function () {
-      var target = narrow.matches ? late : heroSlot;
-      if (card.parentElement !== target) target.appendChild(card);
-      late.parentElement.hidden = !narrow.matches;
-    };
-    place();
-    if (narrow.addEventListener) narrow.addEventListener("change", place); else narrow.addListener(place);
-  }
 
   document.addEventListener("themechange", function () { draw(); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { draw(); });
