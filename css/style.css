@@ -469,7 +469,7 @@ ul.chips, .proj ul.chips, .tl ul.chips { display: flex; flex-wrap: wrap; gap: 6p
 .hero .cards { grid-area: cards; display: grid; gap: 14px; align-self: end; }
 .hero .photo { min-height: 460px; }
 .hero .cards .teaser { gap: 6px; padding: 16px 20px; }
-.hero .cards .t-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.hero .cards .t-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
 .hero .cards .t-head .k::after { content: "·"; margin-left: 10px; color: var(--muted); }
 @media (max-width: 900px) {
   .hero .container { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "photo" "cards"; }
