@@ -479,3 +479,11 @@ ul.chips, .proj ul.chips, .tl ul.chips { display: flex; flex-wrap: wrap; gap: 6p
 /* home: the cards' rounded corners make them look indented, so they start ~0.15 cm further left than the intro text */
 @media (min-width: 901px) { .hero .cards { margin-left: -6px; } }
 table.board tr.nikola .nm { font-weight: 600; }
+
+/* home, laptops: intro, cards, photo, rope and numbers fill exactly the first screen,
+   so the race and Latest start just below it on any screen height (header is 69px) */
+@media (min-width: 901px) and (min-height: 600px) {
+  .first-screen { min-height: calc(100vh - 69px); display: flex; flex-direction: column; }
+  .first-screen .hero { flex: 1; display: flex; align-items: center; }
+  .first-screen .hero .container { width: 100%; }
+}
